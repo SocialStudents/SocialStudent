@@ -20,5 +20,26 @@ public class StudentContactDaoImpl extends BaseAbstractGenericDao<StudentContact
     public Long createStudentContact(StudentContact studentContact) {
         return super.create(studentContact);
     }
+       @Override
+    public Long updateStudentContact(StudentContact studentContact) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public Long deleteStudentContact(StudentContact studentContact) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public Long retrievebyidStudentContact(StudentContact studentContact) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public Long retrieveallStudentContact(StudentContact studentContact) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+
     
 }
