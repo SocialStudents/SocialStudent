@@ -6,6 +6,7 @@ package com.techdhoom.socialstudent.database;
 
 import com.techdhoom.socialstudent.common.database.GenericDao;
 import com.techdhoom.socialstudent.model.Eventmaster;
+import java.util.List;
 
 /**
  *
@@ -13,10 +14,10 @@ import com.techdhoom.socialstudent.model.Eventmaster;
  */
 public interface EventmasterDao extends GenericDao<Eventmaster, Long> {
     public Long createEventmaster(Eventmaster eventmaster);
-    public Long updateEventmaster(Eventmaster eventmaster);
+    public void updateEventmaster(Eventmaster eventmaster);
     public Long deleteEventmaster(Eventmaster eventmaster);
-    public Long retrievebyidEventmaster(Eventmaster eventmaster);
-    public Long retrieveallEventmaster(Eventmaster eventmaster);
+    public Eventmaster retrievebyidEventmaster(Long id);
+    public List<Eventmaster> retrieveallEventmaster();
 
     
 }

@@ -5,17 +5,17 @@
 package com.techdhoom.socialstudent.database;
 
 import com.techdhoom.socialstudent.common.database.GenericDao;
-import com.techdhoom.socialstudent.model.Group;
+import com.techdhoom.socialstudent.model.Group1;
 
 /**
  *
  * @author tapan
  */
-public interface GroupDao extends GenericDao<Group, Long> {
-     public Long createGroup(Group group);
-   public Long updateGroup(Group group);
-   public Long deleteGroup(Group group);
-   public Long retrievebyidGroup(Group group);
-   public Long retrieveallGroup(Group group);
+public interface GroupDao extends GenericDao<Group1, Long> {
+     public Long createGroup(Group1 group);
+   public Long updateGroup(Group1 group);
+   public Long deleteGroup(Group1 group);
+   public Long retrievebyidGroup(Group1 group);
+   public Long retrieveallGroup(Group1 group);
     
 }

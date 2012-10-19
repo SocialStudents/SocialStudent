@@ -9,23 +9,16 @@ import com.techdhoom.socialstudent.common.database.GenericDao;
 import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
 import java.util.List;
-
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
-import org.hibernate.criterion.Criterion;
-import org.hibernate.criterion.DetachedCriteria;
-import org.hibernate.criterion.Restrictions;
-import org.hibernate.criterion.Order;
-
-import org.hibernate.criterion.Projections;
+import org.hibernate.criterion.*;
 import org.hibernate.transform.DistinctRootEntityResultTransformer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.dao.support.DataAccessUtils;
-
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 /**
@@ -38,8 +31,8 @@ public abstract class BaseAbstractGenericDao<EntityType, IDType extends Serializ
     private Class<EntityType> persistentClass = (Class<EntityType>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0];
     
     @Autowired
-    @Qualifier("sessionFactoryPBalance")
-    private void setSessionFactoryPBalance(SessionFactory sessionFactory) {
+    @Qualifier("sessionFactorySocialStudent")
+    private void setSessionFactorySocialStudent(SessionFactory sessionFactory) {
         this.setSessionFactory(sessionFactory);
     }
 
@@ -68,6 +61,7 @@ public abstract class BaseAbstractGenericDao<EntityType, IDType extends Serializ
      */
     @Override
     public IDType create(EntityType entity) {
+        System.out.println("\n\t---> "+getHibernateTemplate());
         return (IDType) getHibernateTemplate().save(entity);
     }
 

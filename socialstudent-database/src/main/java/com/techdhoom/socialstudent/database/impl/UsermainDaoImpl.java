@@ -18,6 +18,11 @@ import org.springframework.stereotype.Repository;
 public class UsermainDaoImpl extends BaseAbstractGenericDao<Usermain, Long> implements UsermainDao{
      @Override
     public Long createUsermain(Usermain usermain) {
+        usermain.setEnrollNo(usermain.getEnrollNo());
+         usermain.setUsername(usermain.getUsername());
+         usermain.setUserlastname(usermain.getUserlastname());
+         usermain.setBranch(usermain.getBranch());
+      //   usermain.setYear(usermain.getYear());
         return super.create(usermain);
     }
 

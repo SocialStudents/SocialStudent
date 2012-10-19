@@ -5,40 +5,37 @@
 package com.techdhoom.socialstudent.database.impl;
 
 import com.techdhoom.socialstudent.common.database.impl.BaseAbstractGenericDao;
-import com.techdhoom.socialstudent.database.GroupDao;
-import com.techdhoom.socialstudent.model.Group1;
-import java.io.Serializable;
-import org.springframework.stereotype.Repository;
+import com.techdhoom.socialstudent.database.GroupsDao;
+import com.techdhoom.socialstudent.model.Groups;
 
 /**
  *
- * @author tapan
+ * @author SONY
  */
-@Repository
-public class GroupDaoImpl extends BaseAbstractGenericDao<Group1, Long> implements GroupDao {
+public class GroupsDaoImpl extends BaseAbstractGenericDao<Groups, Long> implements GroupsDao {
 
     @Override
-    public Long createGroup(Group1 group) {
-        return super.create(group);
-    }
+    public Long createEventmaster(Groups groups) {
+       return super.create(groups);
+        }
 
     @Override
-    public Long updateGroup(Group1 group) {
+    public Long updateEventmaster(Groups groups) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public Long deleteGroup(Group1 group) {
+    public Long deleteEventmaster(Groups groups) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public Long retrievebyidGroup(Group1 group) {
+    public Long retrievebyidEventmaster(Groups groups) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public Long retrieveallGroup(Group1 group) {
+    public Long retrieveallEventmaster(Groups groups) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
     
