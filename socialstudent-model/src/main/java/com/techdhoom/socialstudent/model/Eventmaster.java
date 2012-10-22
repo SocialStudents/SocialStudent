@@ -115,13 +115,13 @@ public class Eventmaster implements Serializable {
         this.eventPlace = eventPlace;
     }
 
-    public Usermain getEventcreatedBy() {
-        return eventcreatedBy;
-    }
-
-    public void setEventcreatedBy(Usermain eventcreatedBy) {
-        this.eventcreatedBy = eventcreatedBy;
-    }
+//    public Usermain getEventcreatedBy() {
+//        return eventcreatedBy;
+//    }
+//
+//    public void setEventcreatedBy(Usermain eventcreatedBy) {
+//        this.eventcreatedBy = eventcreatedBy;
+//    }
 
     @Override
     public int hashCode() {

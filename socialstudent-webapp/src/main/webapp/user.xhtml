@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core">
+    <head>
+        <title>USERS</title>
+    </head>
+    <body>
+         <h:form>
+             <h:dataTable value="#{userServiceBean.retrieveUserDataBeanList()}" var="user">
+                 <h:column>
+                     #{user.firstname}
+<!--                     <f:setPropertyActionListener/>-->
+                </h:column>
+                 <h:column>
+                     <h:commandButton valu="add users" /> 
+                 </h:column>
+            </h:dataTable>
+        </h:form>
+    </body>
+</html>

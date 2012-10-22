@@ -51,7 +51,7 @@ http://www.springframework.org/schema/security/spring-security-3.1.xsd">
     <authentication-manager alias="authenticationManagerAlias">
         <authentication-provider>
         <password-encoder ref="passwordEncoder"/>
-            <jdbc-user-service data-source-ref="dataSourcePBalance"
+            <jdbc-user-service data-source-ref="dataSourceSocialStudent"
                            users-by-username-query="SELECT user_id, password, is_active FROM usermanagement_system_user where user_id=?"
                            authorities-by-username-query="SELECT user_id,type FROM usermanagement_system_user WHERE user_id=?" />
         </authentication-provider>

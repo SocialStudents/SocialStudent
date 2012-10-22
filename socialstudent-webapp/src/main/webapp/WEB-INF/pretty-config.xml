@@ -23,7 +23,18 @@
         <pattern>/aboutus</pattern>
         <view-id>/pages/aboutus.jsf</view-id>
     </url-mapping>
-    
+    <url-mapping id="user">
+        <pattern>/user</pattern>
+        <view-id>user.jsf</view-id>
+    </url-mapping>
+     <url-mapping id="jugal1">
+        <pattern>/jugal1</pattern>
+        <view-id>jugal1.jsf</view-id>
+    </url-mapping>
+    <url-mapping id="admin">
+        <pattern>/admin</pattern>
+        <view-id>admin.jsf</view-id>
+    </url-mapping>
     <url-mapping id="contact">
         <pattern>/contact</pattern>
         <view-id>/pages/contact.jsf</view-id>

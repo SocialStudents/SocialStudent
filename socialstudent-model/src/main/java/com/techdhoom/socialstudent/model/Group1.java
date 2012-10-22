@@ -26,8 +26,8 @@ import javax.xml.bind.annotation.XmlTransient;
  * @author tapan
  */
 @Entity
-@Table(name = "group")
-public class Group implements Serializable {
+@Table(name = "group1")
+public class Group1 implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -50,10 +50,10 @@ public class Group implements Serializable {
     @ManyToOne
     private Groupmaster groupType;
 
-    public Group() {
+    public Group1() {
     }
 
-    public Group(Long groupId) {
+    public Group1(Long groupId) {
         this.groupId = groupId;
     }
 
@@ -124,10 +124,10 @@ public class Group implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Group)) {
+        if (!(object instanceof Group1)) {
             return false;
         }
-        Group other = (Group) object;
+        Group1 other = (Group1) object;
         if ((this.groupId == null && other.groupId != null) || (this.groupId != null && !this.groupId.equals(other.groupId))) {
             return false;
         }

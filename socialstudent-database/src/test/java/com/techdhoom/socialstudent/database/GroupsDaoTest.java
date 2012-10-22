@@ -112,25 +112,6 @@ public class GroupsDaoTest {
 
     public class GroupsDaoImpl implements GroupsDao {
 
-        public Long createEventmaster(Groups groups) {
-            return null;
-        }
-
-        public Long updateEventmaster(Groups groups) {
-            return null;
-        }
-
-        public Long deleteEventmaster(Groups groups) {
-            return null;
-        }
-
-        public Long retrievebyidEventmaster(Groups groups) {
-            return null;
-        }
-
-        public Long retrieveallEventmaster(Groups groups) {
-            return null;
-        }
 
         @Override
         public Groups retrieveById(Long id) {
@@ -219,6 +200,31 @@ public class GroupsDaoTest {
 
         @Override
         public List<Groups> findByExample(Groups entity) {
+            throw new UnsupportedOperationException("Not supported yet.");
+        }
+
+        @Override
+        public Long createEventmaster(Groups groups) {
+            throw new UnsupportedOperationException("Not supported yet.");
+        }
+
+        @Override
+        public Long updateEventmaster(Groups groups) {
+            throw new UnsupportedOperationException("Not supported yet.");
+        }
+
+        @Override
+        public Long deleteEventmaster(Groups groups) {
+            throw new UnsupportedOperationException("Not supported yet.");
+        }
+
+        @Override
+        public Long retrievebyidEventmaster(Groups groups) {
+            throw new UnsupportedOperationException("Not supported yet.");
+        }
+
+        @Override
+        public Long retrieveallEventmaster(Groups groups) {
             throw new UnsupportedOperationException("Not supported yet.");
         }
     }

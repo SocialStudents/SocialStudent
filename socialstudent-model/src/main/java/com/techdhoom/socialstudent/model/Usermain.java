@@ -6,63 +6,46 @@ package com.techdhoom.socialstudent.model;
 
 import java.io.Serializable;
 import java.util.Collection;
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author tapan
+ * @author SONY
  */
 @Entity
 @Table(name = "usermain")
+@XmlRootElement
+@NamedQueries({
+    @NamedQuery(name = "Usermain.findAll", query = "SELECT u FROM Usermain u"),
+    @NamedQuery(name = "Usermain.findByUserId", query = "SELECT u FROM Usermain u WHERE u.userId = :userId"),
+    @NamedQuery(name = "Usermain.findByUserType", query = "SELECT u FROM Usermain u WHERE u.userType = :userType"),
+    @NamedQuery(name = "Usermain.findByUsername", query = "SELECT u FROM Usermain u WHERE u.username = :username"),
+    @NamedQuery(name = "Usermain.findByBranch", query = "SELECT u FROM Usermain u WHERE u.branch = :branch"),
+    @NamedQuery(name = "Usermain.findByEnrollNo", query = "SELECT u FROM Usermain u WHERE u.enrollNo = :enrollNo"),
+    @NamedQuery(name = "Usermain.findByUserlastname", query = "SELECT u FROM Usermain u WHERE u.userlastname = :userlastname"),
+    @NamedQuery(name = "Usermain.findByYear", query = "SELECT u FROM Usermain u WHERE u.year = :year")})
 public class Usermain implements Serializable {
-    @OneToMany(mappedBy = "userFriendsId")
-    private Collection<Friendmanagement> friendmanagementCollection;
-    @OneToMany(mappedBy = "userId")
-    private Collection<Friendmanagement> friendmanagementCollection1;
-    @OneToMany(mappedBy = "eventcreatedBy")
-    private Collection<Eventmaster> eventmasterCollection;
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Basic(optional = false)
     @Column(name = "user_id")
     private Long userId;
-    @Column(name = "username")
-    private String username;
     @Column(name = "user_type")
     private String userType;
-    @OneToMany(mappedBy = "userId")
-    private Collection<Feedunlike> feedunlikeCollection;
-    @OneToMany(mappedBy = "userId")
-    private Collection<Groupmember> groupmemberCollection;
-    @OneToMany(mappedBy = "userId")
-    private Collection<Feedlike> feedlikeCollection;
-    @OneToMany(mappedBy = "updatedBy")
-    private Collection<Feed> feedCollection;
-    @OneToMany(mappedBy = "owner")
-    private Collection<Feed> feedCollection1;
-    @OneToMany(mappedBy = "loggedperson")
-    private Collection<Feed> feedCollection2;
-    @OneToMany(mappedBy = "createdBy")
-    private Collection<Feed> feedCollection3;
-    @OneToMany(mappedBy = "updatedBy")
-    private Collection<Group> group1Collection;
-    @OneToMany(mappedBy = "createdBy")
-    private Collection<Group> group1Collection1;
-    @OneToMany(mappedBy = "groupowner")
-    private Collection<Group> group1Collection2;
-    @OneToMany(mappedBy = "createdBy")
-    private Collection<Feedcomment> feedcommentCollection;
+    @Column(name = "username")
+    private String username;
+    @Column(name = "branch")
+    private String branch;
+    @Column(name = "enroll_no")
+    private Integer enrollNo;
+    @Column(name = "userlastname")
+    private String userlastname;
+    @Column(name = "year")
+    private Integer year;
+    @OneToMany(mappedBy = "userid")
+    private Collection<Status> statusCollection;
 
     public Usermain() {
     }
@@ -79,14 +62,6 @@ public class Usermain implements Serializable {
         this.userId = userId;
     }
 
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
     public String getUserType() {
         return userType;
     }
@@ -95,103 +70,53 @@ public class Usermain implements Serializable {
         this.userType = userType;
     }
 
-    @XmlTransient
-    public Collection<Feedunlike> getFeedunlikeCollection() {
-        return feedunlikeCollection;
+    public String getUsername() {
+        return username;
     }
 
-    public void setFeedunlikeCollection(Collection<Feedunlike> feedunlikeCollection) {
-        this.feedunlikeCollection = feedunlikeCollection;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    @XmlTransient
-    public Collection<Groupmember> getGroupmemberCollection() {
-        return groupmemberCollection;
+    public String getBranch() {
+        return branch;
     }
 
-    public void setGroupmemberCollection(Collection<Groupmember> groupmemberCollection) {
-        this.groupmemberCollection = groupmemberCollection;
+    public void setBranch(String branch) {
+        this.branch = branch;
     }
 
-    @XmlTransient
-    public Collection<Feedlike> getFeedlikeCollection() {
-        return feedlikeCollection;
+    public Integer getEnrollNo() {
+        return enrollNo;
     }
 
-    public void setFeedlikeCollection(Collection<Feedlike> feedlikeCollection) {
-        this.feedlikeCollection = feedlikeCollection;
+    public void setEnrollNo(Integer enrollNo) {
+        this.enrollNo = enrollNo;
     }
 
-    @XmlTransient
-    public Collection<Feed> getFeedCollection() {
-        return feedCollection;
+    public String getUserlastname() {
+        return userlastname;
     }
 
-    public void setFeedCollection(Collection<Feed> feedCollection) {
-        this.feedCollection = feedCollection;
+    public void setUserlastname(String userlastname) {
+        this.userlastname = userlastname;
     }
 
-    @XmlTransient
-    public Collection<Feed> getFeedCollection1() {
-        return feedCollection1;
+    public Integer getYear() {
+        return year;
     }
 
-    public void setFeedCollection1(Collection<Feed> feedCollection1) {
-        this.feedCollection1 = feedCollection1;
+    public void setYear(Integer year) {
+        this.year = year;
     }
 
     @XmlTransient
-    public Collection<Feed> getFeedCollection2() {
-        return feedCollection2;
+    public Collection<Status> getStatusCollection() {
+        return statusCollection;
     }
 
-    public void setFeedCollection2(Collection<Feed> feedCollection2) {
-        this.feedCollection2 = feedCollection2;
-    }
-
-    @XmlTransient
-    public Collection<Feed> getFeedCollection3() {
-        return feedCollection3;
-    }
-
-    public void setFeedCollection3(Collection<Feed> feedCollection3) {
-        this.feedCollection3 = feedCollection3;
-    }
-
-    @XmlTransient
-    public Collection<Group> getGroup1Collection() {
-        return group1Collection;
-    }
-
-    public void setGroup1Collection(Collection<Group> group1Collection) {
-        this.group1Collection = group1Collection;
-    }
-
-    @XmlTransient
-    public Collection<Group> getGroup1Collection1() {
-        return group1Collection1;
-    }
-
-    public void setGroup1Collection1(Collection<Group> group1Collection1) {
-        this.group1Collection1 = group1Collection1;
-    }
-
-    @XmlTransient
-    public Collection<Group> getGroup1Collection2() {
-        return group1Collection2;
-    }
-
-    public void setGroup1Collection2(Collection<Group> group1Collection2) {
-        this.group1Collection2 = group1Collection2;
-    }
-
-    @XmlTransient
-    public Collection<Feedcomment> getFeedcommentCollection() {
-        return feedcommentCollection;
-    }
-
-    public void setFeedcommentCollection(Collection<Feedcomment> feedcommentCollection) {
-        this.feedcommentCollection = feedcommentCollection;
+    public void setStatusCollection(Collection<Status> statusCollection) {
+        this.statusCollection = statusCollection;
     }
 
     @Override
@@ -217,33 +142,6 @@ public class Usermain implements Serializable {
     @Override
     public String toString() {
         return "com.techdhoom.socialstudent.model.Usermain[ userId=" + userId + " ]";
-    }
-
-    @XmlTransient
-    public Collection<Friendmanagement> getFriendmanagementCollection() {
-        return friendmanagementCollection;
-    }
-
-    public void setFriendmanagementCollection(Collection<Friendmanagement> friendmanagementCollection) {
-        this.friendmanagementCollection = friendmanagementCollection;
-    }
-
-    @XmlTransient
-    public Collection<Friendmanagement> getFriendmanagementCollection1() {
-        return friendmanagementCollection1;
-    }
-
-    public void setFriendmanagementCollection1(Collection<Friendmanagement> friendmanagementCollection1) {
-        this.friendmanagementCollection1 = friendmanagementCollection1;
-    }
-
-    @XmlTransient
-    public Collection<Eventmaster> getEventmasterCollection() {
-        return eventmasterCollection;
-    }
-
-    public void setEventmasterCollection(Collection<Eventmaster> eventmasterCollection) {
-        this.eventmasterCollection = eventmasterCollection;
     }
     
 }

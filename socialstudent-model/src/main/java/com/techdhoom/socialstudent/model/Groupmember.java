@@ -35,7 +35,7 @@ public class Groupmember implements Serializable {
     private Usermain userId;
     @JoinColumn(name = "group_id", referencedColumnName = "group_id")
     @ManyToOne
-    private Group groupId;
+    private Group1 groupId;
 
     public Groupmember() {
     }
@@ -60,11 +60,11 @@ public class Groupmember implements Serializable {
         this.userId = userId;
     }
 
-    public Group getGroupId() {
+    public Group1 getGroupId() {
         return groupId;
     }
 
-    public void setGroupId(Group groupId) {
+    public void setGroupId(Group1 groupId) {
         this.groupId = groupId;
     }
 

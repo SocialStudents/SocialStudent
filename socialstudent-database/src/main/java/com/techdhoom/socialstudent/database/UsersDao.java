@@ -25,7 +25,7 @@ public interface UsersDao extends GenericDao<Users, Long> {
 
     public Long retrieveallEventmaster(Users users);
 
-    public List<Users> retriveAll();
+    public List<Users> retriveAllUsers();
 
     public List<Users> groupShow();
 }

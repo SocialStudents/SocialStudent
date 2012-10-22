@@ -34,7 +34,7 @@ public class Groupmaster implements Serializable {
     @Column(name = "group_type")
     private String groupType;
     @OneToMany(mappedBy = "groupType")
-    private Collection<Group> group1Collection;
+    private Collection<Group1> group1Collection;
 
     public Groupmaster() {
     }
@@ -60,11 +60,11 @@ public class Groupmaster implements Serializable {
     }
 
     @XmlTransient
-    public Collection<Group> getGroup1Collection() {
+    public Collection<Group1> getGroup1Collection() {
         return group1Collection;
     }
 
-    public void setGroup1Collection(Collection<Group> group1Collection) {
+    public void setGroup1Collection(Collection<Group1> group1Collection) {
         this.group1Collection = group1Collection;
     }
 

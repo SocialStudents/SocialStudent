@@ -34,7 +34,7 @@
                                 <th width="30%"><h:outputLabel value="Username"/><sup><font color="red">*</font></sup></th>
                                 <td>
                                     <a4j:region>
-                                        <h:inputText style="width: 85%;" styleClass="medium" value="#{userDataBean.userId}" id="UserId" required="true" requiredMessage="Enter username" maxlength="30" onkeyup="convertToLowerCase(this.id,event);" onchange="convertToLowerCase(this.id,event);">
+                                        <h:inputText style="width: 85%;" styleClass="medium" value="#{usersDataBean.userId}" id="UserId" required="true" requiredMessage="Enter username" maxlength="30" onkeyup="convertToLowerCase(this.id,event);" onchange="convertToLowerCase(this.id,event);">
                                             <f:ajax event="blur" render="useridMsg check" listener="#{userServiceBean.isUserExist()}" />
                                         </h:inputText>
                                     </a4j:region>
@@ -47,7 +47,7 @@
                             </tr>
                             <tr>
                                 <th><h:outputLabel value="First Name"/><sup><font color="red">*</font></sup></th>
-                                <td><h:inputText style="width: 85%;" styleClass="medium"  value="#{userDataBean.firstName}" id="FirstName" maxlength="50" required="true" requiredMessage="Enter first name">
+                                <td><h:inputText style="width: 85%;" styleClass="medium"  value="#{usersDataBean.firstName}" id="FirstName" maxlength="50" required="true" requiredMessage="Enter first name">
                                         <f:ajax event="blur" render="firstnameMsg" />
                                     </h:inputText>
                                     <br/>
@@ -56,7 +56,7 @@
                             </tr>
                             <tr>
                                 <th><h:outputLabel value="Last Name"/><sup><font color="red">*</font></sup></th>
-                                <td><h:inputText id="LastName" style="width: 85%;" styleClass="medium"  value="#{userDataBean.lastName}" maxlength="50" required="true" requiredMessage="Enter last name">
+                                <td><h:inputText id="LastName" style="width: 85%;" styleClass="medium"  value="#{usersDataBean.lastName}" maxlength="50" required="true" requiredMessage="Enter last name">
                                         <f:ajax event="blur" render="lastnameMsg" />
                                     </h:inputText>
                                     <br/>
@@ -66,7 +66,7 @@
                             <tr>
                                 <th><h:outputLabel value="Password"/><sup><font color="red">*</font></sup></th>
                                 <td>
-                                    <h:inputSecret style="width: 85%" styleClass="medium"  value="#{userDataBean.password}" id="password" maxlength="16" required="true" requiredMessage="Enter password" onkeyup="testPassword(this.value);">
+                                    <h:inputSecret style="width: 85%" styleClass="medium"  value="#{usersDataBean.password}" id="password" maxlength="16" required="true" requiredMessage="Enter password" onkeyup="testPassword(this.value);">
                                         <f:ajax event="blur" render="pwdMsg" />
                                     </h:inputSecret>
                                     <br/>
@@ -84,7 +84,7 @@
                             <tr>
                                 <th><h:outputLabel value="Confirm Password"/><sup><font color="red">*</font></sup></th>
                                 <td>
-                                    <h:inputSecret style="width: 85%" styleClass="medium"  value="#{userDataBean.rePassword}" id="rePassword" maxlength="16" required="true" requiredMessage="Enter confirm password">
+                                    <h:inputSecret style="width: 85%" styleClass="medium"  value="#{usersDataBean.rePassword}" id="rePassword" maxlength="16" required="true" requiredMessage="Enter confirm password">
                                         <f:ajax event="blur" render="cpwdMsg" />
                                     </h:inputSecret>
                                     <br/>
@@ -93,7 +93,7 @@
                             </tr>
                             <tr>
                                 <th><h:outputLabel value="Email address"/><sup><font color="red">*</font></sup></th>
-                                <td><h:inputText style="width: 85%;" styleClass="medium"  value="#{userDataBean.email}" id="EmailAddress" required="true" requiredMessage="Enter email address"  onkeypress="if(!callMethod()){return false;}" maxlength="50">
+                                <td><h:inputText style="width: 85%;" styleClass="medium"  value="#{usersDataBean.email}" id="EmailAddress" required="true" requiredMessage="Enter email address"  onkeypress="if(!callMethod()){return false;}" maxlength="50">
                                         <f:ajax event="blur" render="emailMsg" />
                                     </h:inputText>
                                     <br/>
@@ -135,7 +135,7 @@
                                 <th></th>
                                 <td>
 
-                                    <h:inputText style="width: 85%;" styleClass="medium" id="captcha" value="#{userDataBean.captchaResponse}" validator="#{captchaValidatorBean.validateCaptcha}" required="true" requiredMessage="Enter verification code">
+                                    <h:inputText style="width: 85%;" styleClass="medium" id="captcha" value="#{usersDataBean.captchaResponse}" validator="#{captchaValidatorBean.validateCaptcha}" required="true" requiredMessage="Enter verification code">
                                     </h:inputText>
                                     <br/>
                                     <h:message for="captcha" style="color: red" id="captMsg" />

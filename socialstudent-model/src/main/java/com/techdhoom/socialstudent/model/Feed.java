@@ -41,9 +41,9 @@ public class Feed implements Serializable {
     @JoinColumn(name = "loggedperson", referencedColumnName = "user_id")
     @ManyToOne
     private Usermain loggedperson;
-    @JoinColumn(name = "created_by", referencedColumnName = "user_id")
-    @ManyToOne
-    private Usermain createdBy;
+//    @JoinColumn(name = "created_by", referencedColumnName = "user_id")
+//    @ManyToOne
+//    private Usermain createdBy;
 
     public Feed() {
     }
@@ -92,13 +92,13 @@ public class Feed implements Serializable {
         this.loggedperson = loggedperson;
     }
 
-    public Usermain getCreatedBy() {
-        return createdBy;
-    }
-
-    public void setCreatedBy(Usermain createdBy) {
-        this.createdBy = createdBy;
-    }
+//    public Usermain getCreatedBy() {
+//        return createdBy;
+//    }
+//
+//    public void setCreatedBy(Usermain createdBy) {
+//        this.createdBy = createdBy;
+//    }
 
     @Override
     public int hashCode() {

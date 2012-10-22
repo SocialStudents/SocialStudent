@@ -56,7 +56,7 @@
 
     <managed-bean>
         <managed-bean-name>captchaServiceBean</managed-bean-name>
-        <managed-bean-class>com.argusoft.phmms.captcha.servicebean.CaptchaServiceBean</managed-bean-class>
+        <managed-bean-class>com.techdhoom.socialstudent.captcha.servicebean.CaptchaServiceBean</managed-bean-class>
         <managed-bean-scope>request</managed-bean-scope>
         <managed-property>
             <property-name>captchaService</property-name>

@@ -54,7 +54,7 @@ public class UsersDaoImpl extends BaseAbstractGenericDao<Users, Long> implements
     }
 
     @Override
-    public List<Users> retriveAll() {
+    public List<Users> retriveAllUsers() {
       return super.retrieveAll();
     }
 }
