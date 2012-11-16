@@ -4,17 +4,30 @@
  */
 package com.techdhoom.socialstudent.database;
 
+import com.techdhoom.socialstudent.database.config.DatabaseApplicationConfig;
+import com.techdhoom.socialstudent.database.impl.StatusDaoImpl;
 import com.techdhoom.socialstudent.model.Status;
+import com.techdhoom.socialstudent.model.Usermain;
 import java.util.List;
-import org.hibernate.criterion.Criterion;
 import org.junit.*;
 import static org.junit.Assert.*;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.support.AnnotationConfigContextLoader;
 
 /**
  *
  * @author SONY
  */
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(loader = AnnotationConfigContextLoader.class, classes = {DatabaseApplicationConfig.class})
+//@TransactionConfiguration(transactionManager = "transactionManager", defaultRollback = true)
+//@Transactional
 public class StatusDaoTest {
+    @Autowired
+      StatusDao statusDao;
     
     public StatusDaoTest() {
     }
@@ -38,188 +51,56 @@ public class StatusDaoTest {
     /**
      * Test of createStatus method, of class StatusDao.
      */
-    @Test
-    public void testCreateStatus() {
-        System.out.println("createStatus");
-        Status status = null;
-        StatusDao instance = new StatusDaoImpl();
-        Long expResult = null;
-        Long result = instance.createStatus(status);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+//    @Test
+//    public void testCreateStatus() {
+//      System.out.println("createStatus");
+//        Status status = new Status();
+//        status.setYourstatus("Test");
+//       
+//        Long result = statusDao.createStatus(status);
+//    }
+//
+//    /**
+//     * Test of updateStatus method, of class StatusDao.
+//     */
+//    @Test
+//    public void testRetrieveallStatus() {
+//        System.out.println("retrieveallStatus");
+//       List<Status> result =statusDao.retrieveallStatus();
+//        for(Status status: result){
+//            System.out.println("\n\t--user name "+status.getYourstatus()+"\t");
+//        }
+//        System.out.println("\n\t-- size of list "+result.size());
+//    }
 
     /**
-     * Test of updateStatus method, of class StatusDao.
+     * Test of findFiltered1 method, of class StatusDao.
      */
     @Test
-    public void testUpdateStatus() {
-        System.out.println("updateStatus");
-        Status status = null;
-        StatusDao instance = new StatusDaoImpl();
-        Long expResult = null;
-        Long result = instance.updateStatus(status);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    public void testFindFiltered1() {
+        System.out.println("findFiltered1");
+       // String property = "";
+       // Object filter = 4l;
+//        StatusDao instance = new StatusDaoImpl();
+//        List expResult = null;
+//        List result = instance.findFiltered1(property, filter);
+//        assertEquals(expResult, result);
+//        // TODO review the generated test code and remove the default call to fail.
+//        fail("The test case is a prototype.");
+//   
+   Usermain usermain=new Usermain(4l);
+        List<Status> result =statusDao.findFiltered1("userid",usermain);
+        for(Status status: result){
+            System.out.println("\n\t--user name "+status.getYourstatus()+"\t");
+        }
+       
+   
+    
+    }
+        
+
+   
     }
 
-    /**
-     * Test of deleteStatus method, of class StatusDao.
-     */
-    @Test
-    public void testDeleteStatus() {
-        System.out.println("deleteStatus");
-        Status status = null;
-        StatusDao instance = new StatusDaoImpl();
-        Long expResult = null;
-        Long result = instance.deleteStatus(status);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
 
-    /**
-     * Test of retrievebyidStatus method, of class StatusDao.
-     */
-    @Test
-    public void testRetrievebyidStatus() {
-        System.out.println("retrievebyidStatus");
-        Status status = null;
-        StatusDao instance = new StatusDaoImpl();
-        Long expResult = null;
-        Long result = instance.retrievebyidStatus(status);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
 
-    /**
-     * Test of retrieveallStatus method, of class StatusDao.
-     */
-    @Test
-    public void testRetrieveallStatus() {
-        System.out.println("retrieveallStatus");
-        Status status = null;
-        StatusDao instance = new StatusDaoImpl();
-        Long expResult = null;
-        Long result = instance.retrieveallStatus(status);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    public class StatusDaoImpl implements StatusDao {
-
-        public Long createStatus(Status status) {
-            return null;
-        }
-
-        public Long updateStatus(Status status) {
-            return null;
-        }
-
-        public Long deleteStatus(Status status) {
-            return null;
-        }
-
-        public Long retrievebyidStatus(Status status) {
-            return null;
-        }
-
-        public Long retrieveallStatus(Status status) {
-            return null;
-        }
-
-        @Override
-        public Status retrieveById(Long id) {
-            throw new UnsupportedOperationException("Not supported yet.");
-        }
-
-        @Override
-        public Long create(Status entity) {
-            throw new UnsupportedOperationException("Not supported yet.");
-        }
-
-        @Override
-        public void createOrUpdate(Status entity) {
-            throw new UnsupportedOperationException("Not supported yet.");
-        }
-
-        @Override
-        public void update(Status entity) {
-            throw new UnsupportedOperationException("Not supported yet.");
-        }
-
-        @Override
-        public void delete(Status entity) {
-            throw new UnsupportedOperationException("Not supported yet.");
-        }
-
-        @Override
-        public void deleteById(Long id) {
-            throw new UnsupportedOperationException("Not supported yet.");
-        }
-
-        @Override
-        public List<Status> retrieveAll() {
-            throw new UnsupportedOperationException("Not supported yet.");
-        }
-
-        @Override
-        public List<Status> findAll(String orderBy) {
-            throw new UnsupportedOperationException("Not supported yet.");
-        }
-
-        @Override
-        public List<Status> findFiltered(String property, Object filter) {
-            throw new UnsupportedOperationException("Not supported yet.");
-        }
-
-        @Override
-        public List<Status> findFiltered(String property, Object filter, String orderBy) {
-            throw new UnsupportedOperationException("Not supported yet.");
-        }
-
-        @Override
-        public List<Status> findLikeFiltered(String property, Object filter) {
-            throw new UnsupportedOperationException("Not supported yet.");
-        }
-
-        @Override
-        public List<Status> findLikeFiltered(String property, Object filter, String orderBy) {
-            throw new UnsupportedOperationException("Not supported yet.");
-        }
-
-        @Override
-        public Status findUniqueFiltered(String property, Object filter) {
-            throw new UnsupportedOperationException("Not supported yet.");
-        }
-
-        @Override
-        public Status findUniqueFiltered(String property, Object filter, String orderBy) {
-            throw new UnsupportedOperationException("Not supported yet.");
-        }
-
-        @Override
-        public List<Status> findByCriteria(Criterion... criterion) {
-            throw new UnsupportedOperationException("Not supported yet.");
-        }
-
-        @Override
-        public List<Status> findByCriteriaList(List<Criterion> criterions) {
-            throw new UnsupportedOperationException("Not supported yet.");
-        }
-
-        @Override
-        public List<Status> findByCriteriaList(List<Criterion> criterions, Boolean isSearch) {
-            throw new UnsupportedOperationException("Not supported yet.");
-        }
-
-        @Override
-        public List<Status> findByExample(Status entity) {
-            throw new UnsupportedOperationException("Not supported yet.");
-        }
-    }
-}

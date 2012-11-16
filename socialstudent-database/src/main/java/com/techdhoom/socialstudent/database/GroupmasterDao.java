@@ -6,6 +6,7 @@ package com.techdhoom.socialstudent.database;
 
 import com.techdhoom.socialstudent.common.database.GenericDao;
 import com.techdhoom.socialstudent.model.Groupmaster;
+import java.util.List;
 
 /**
  *
@@ -13,9 +14,9 @@ import com.techdhoom.socialstudent.model.Groupmaster;
  */
 public interface GroupmasterDao extends GenericDao<Groupmaster, Long> {
     public Long createGroupmaster(Groupmaster groupmaster);
-   public Long updateGroupmaster(Groupmaster groupmaster);
-   public Long deleteGroupmaster(Groupmaster groupmaster);
-   public Long retrievebyidGroupmaster(Groupmaster groupmaster);
-   public Long retrieveallGroupmaster(Groupmaster groupmaster);
+//   public Long updateGroupmaster(Groupmaster groupmaster);
+//   public Long deleteGroupmaster(Groupmaster groupmaster);
+//   public Long retrievebyidGroupmaster(Groupmaster groupmaster);
+   public List<Groupmaster> retrieveallGroupmaster();
     
 }

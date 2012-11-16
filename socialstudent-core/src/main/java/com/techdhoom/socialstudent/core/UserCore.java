@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
  *
  * @author SONY
  */
-@Service("userService")
+
 public interface UserCore {
 
     public List<Users> retrieveAllUsers();

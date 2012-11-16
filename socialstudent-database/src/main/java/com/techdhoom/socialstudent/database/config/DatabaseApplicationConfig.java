@@ -37,7 +37,7 @@ public class DatabaseApplicationConfig {
     public DataSource dataSourceSocialStudent() {
         System.out.println("\n\t-->");
 //        DataSource dataSrc = new DriverManagerDataSource(env.getProperty("jdbc.driverClassName"), env.getProperty("jdbc.url"), env.getProperty("jdbc.username"), env.getProperty("jdbc.password"));
-        DataSource dataSrc = new DriverManagerDataSource("org.postgresql.Driver","jdbc:postgresql://localhost:5433/socialstudent","postgres","vrushank");
+        DataSource dataSrc = new DriverManagerDataSource("org.postgresql.Driver","jdbc:postgresql://localhost:5432/socialstudent","postgres","manan");
         System.out.println("ds created.........................");
         System.out.println("\n\t-+->+"+dataSrc);
         return dataSrc;

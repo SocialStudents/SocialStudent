@@ -14,18 +14,39 @@ import javax.faces.bean.ManagedBean;
 @ManagedBean
 
 public class GroupsDataBean {
-  
+      private Long groupmasterId;
+private String groupType;
+
         private Long groupid;
         private String groupname;
 
     public GroupsDataBean() {
     }
 
-    public GroupsDataBean(Long groupid, String groupname) {
+    public GroupsDataBean(Long groupmasterId, String groupType, Long groupid, String groupname) {
+        this.groupmasterId = groupmasterId;
+        this.groupType = groupType;
         this.groupid = groupid;
         this.groupname = groupname;
     }
 
+    public String getGroupType() {
+        return groupType;
+    }
+
+    public Long getGroupmasterId() {
+        return groupmasterId;
+    }
+
+    public void setGroupType(String groupType) {
+        this.groupType = groupType;
+    }
+
+    public void setGroupmasterId(Long groupmasterId) {
+        this.groupmasterId = groupmasterId;
+    }
+
+   
     public Long getGroupid() {
         return groupid;
     }

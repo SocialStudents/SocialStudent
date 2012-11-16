@@ -8,6 +8,7 @@ import com.techdhoom.socialstudent.common.database.impl.BaseAbstractGenericDao;
 import com.techdhoom.socialstudent.database.GroupmasterDao;
 import com.techdhoom.socialstudent.model.Groupmaster;
 import java.io.Serializable;
+import java.util.List;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -23,23 +24,10 @@ public class GroupmasterDaoImpl extends BaseAbstractGenericDao<Groupmaster, Long
     }
 
     @Override
-    public Long updateGroupmaster(Groupmaster groupmaster) {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public List<Groupmaster> retrieveallGroupmaster() {
+       return super.retrieveAll();
     }
 
-    @Override
-    public Long deleteGroupmaster(Groupmaster groupmaster) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    @Override
-    public Long retrievebyidGroupmaster(Groupmaster groupmaster) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    @Override
-    public Long retrieveallGroupmaster(Groupmaster groupmaster) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
+ 
     
 }

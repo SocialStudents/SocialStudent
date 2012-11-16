@@ -6,13 +6,16 @@
 package com.techdhoom.socialstudent.common.database.impl;
 
 import com.techdhoom.socialstudent.common.database.GenericDao;
+import com.techdhoom.socialstudent.model.Users;
 import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.hibernate.Criteria;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
 import org.hibernate.criterion.*;
 import org.hibernate.transform.DistinctRootEntityResultTransformer;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -112,6 +115,7 @@ public abstract class BaseAbstractGenericDao<EntityType, IDType extends Serializ
     @Override
     public List<EntityType> retrieveAll() {
 
+      
         List<EntityType> list = getHibernateTemplate().loadAll(getPersistentClass());
         DistinctRootEntityResultTransformer transformer = DistinctRootEntityResultTransformer.INSTANCE;
         list = transformer.transformList(list);
@@ -160,7 +164,7 @@ public abstract class BaseAbstractGenericDao<EntityType, IDType extends Serializ
         list = transformer.transformList(list);
         return list;
     }
-
+    
     @Override
     public List<EntityType> findLikeFiltered(String property, Object filter) {
 

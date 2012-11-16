@@ -15,7 +15,7 @@ import org.springframework.context.annotation.ImportResource;
  * @author ncontractor
  */
 @Configuration
-@ComponentScan(basePackages={"com.techdhoom.socialstudent.core"})
+@ComponentScan(basePackages={"com.techdhoom.socialstudent"})
 //@ComponentScan.Filter(type= FilterType.ANNOTATION, value=CoreApplicationConfig.class)
 @Import(DatabaseApplicationConfig.class)
 @ImportResource("classpath:cache-context.xml")

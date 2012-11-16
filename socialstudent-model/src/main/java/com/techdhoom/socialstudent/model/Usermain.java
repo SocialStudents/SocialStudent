@@ -5,77 +5,64 @@
 package com.techdhoom.socialstudent.model;
 
 import java.io.Serializable;
-import java.util.Collection;
-import javax.persistence.*;
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author SONY
+ * @author krunal
  */
 @Entity
 @Table(name = "usermain")
-@XmlRootElement
-@NamedQueries({
-    @NamedQuery(name = "Usermain.findAll", query = "SELECT u FROM Usermain u"),
-    @NamedQuery(name = "Usermain.findByUserId", query = "SELECT u FROM Usermain u WHERE u.userId = :userId"),
-    @NamedQuery(name = "Usermain.findByUserType", query = "SELECT u FROM Usermain u WHERE u.userType = :userType"),
-    @NamedQuery(name = "Usermain.findByUsername", query = "SELECT u FROM Usermain u WHERE u.username = :username"),
-    @NamedQuery(name = "Usermain.findByBranch", query = "SELECT u FROM Usermain u WHERE u.branch = :branch"),
-    @NamedQuery(name = "Usermain.findByEnrollNo", query = "SELECT u FROM Usermain u WHERE u.enrollNo = :enrollNo"),
-    @NamedQuery(name = "Usermain.findByUserlastname", query = "SELECT u FROM Usermain u WHERE u.userlastname = :userlastname"),
-    @NamedQuery(name = "Usermain.findByYear", query = "SELECT u FROM Usermain u WHERE u.year = :year")})
+//@XmlRootElement
+//@NamedQueries({
+//    @NamedQuery(name = "Usermain.findAll", query = "SELECT u FROM Usermain u"),
+//    @NamedQuery(name = "Usermain.findByBranch", query = "SELECT u FROM Usermain u WHERE u.branch = :branch"),
+//    @NamedQuery(name = "Usermain.findByEnrollNo", query = "SELECT u FROM Usermain u WHERE u.enrollNo = :enrollNo"),
+//    @NamedQuery(name = "Usermain.findByUserType", query = "SELECT u FROM Usermain u WHERE u.userType = :userType"),
+//    @NamedQuery(name = "Usermain.findByUserlastname", query = "SELECT u FROM Usermain u WHERE u.userlastname = :userlastname"),
+//    @NamedQuery(name = "Usermain.findByUsername", query = "SELECT u FROM Usermain u WHERE u.username = :username"),
+//    @NamedQuery(name = "Usermain.findByYear", query = "SELECT u FROM Usermain u WHERE u.year = :year"),
+//    @NamedQuery(name = "Usermain.findByEmailId", query = "SELECT u FROM Usermain u WHERE u.emailId = :emailId"),
+//    @NamedQuery(name = "Usermain.findByPassword", query = "SELECT u FROM Usermain u WHERE u.password = :password"),
+//    @NamedQuery(name = "Usermain.findByUserId", query = "SELECT u FROM Usermain u WHERE u.userId = :userId")})
 public class Usermain implements Serializable {
     private static final long serialVersionUID = 1L;
-    @Id
-    @Basic(optional = false)
-    @Column(name = "user_id")
-    private Long userId;
-    @Column(name = "user_type")
-    private String userType;
-    @Column(name = "username")
-    private String username;
     @Column(name = "branch")
     private String branch;
     @Column(name = "enroll_no")
     private Integer enrollNo;
+    @Column(name = "user_type")
+    private String userType;
     @Column(name = "userlastname")
     private String userlastname;
+    @Column(name = "username")
+    private String username;
     @Column(name = "year")
     private Integer year;
-    @OneToMany(mappedBy = "userid")
-    private Collection<Status> statusCollection;
+    @Column(name = "email_id")
+    private String emailId;
+    @Column(name = "password")
+    private String password;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Basic(optional = false)
+    @Column(name = "user_id")
+    private Long userId;
 
     public Usermain() {
     }
 
     public Usermain(Long userId) {
         this.userId = userId;
-    }
-
-    public Long getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Long userId) {
-        this.userId = userId;
-    }
-
-    public String getUserType() {
-        return userType;
-    }
-
-    public void setUserType(String userType) {
-        this.userType = userType;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
     }
 
     public String getBranch() {
@@ -94,12 +81,28 @@ public class Usermain implements Serializable {
         this.enrollNo = enrollNo;
     }
 
+    public String getUserType() {
+        return userType;
+    }
+
+    public void setUserType(String userType) {
+        this.userType = userType;
+    }
+
     public String getUserlastname() {
         return userlastname;
     }
 
     public void setUserlastname(String userlastname) {
         this.userlastname = userlastname;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public Integer getYear() {
@@ -110,13 +113,28 @@ public class Usermain implements Serializable {
         this.year = year;
     }
 
-    @XmlTransient
-    public Collection<Status> getStatusCollection() {
-        return statusCollection;
+    public String getEmailId() {
+        return emailId;
     }
 
-    public void setStatusCollection(Collection<Status> statusCollection) {
-        this.statusCollection = statusCollection;
+    public void setEmailId(String emailId) {
+        this.emailId = emailId;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
     @Override

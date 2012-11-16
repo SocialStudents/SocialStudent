@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
  *
  * @author SONY
  */
-
+@Service("userCore")
 public class UserCoreImpl implements UserCore {
 
     @Autowired
@@ -24,16 +24,12 @@ public class UserCoreImpl implements UserCore {
 
     @Override
     public List<Users> retrieveAllUsers() {
-        System.out.println(usersDao);
-        return usersDao.groupShow();
+        System.out.println("--->>>" + usersDao);
+        return usersDao.retriveAllUsers();
     }
 
     @Override
     public Long createUser(Users users, Group1 group1) {
-       Long userId = usersDao.createUser(users);
-       
-       return userId;
+        return usersDao.create(users);
     }
-    
-    
 }

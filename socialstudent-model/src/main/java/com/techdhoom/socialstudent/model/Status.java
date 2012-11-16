@@ -5,29 +5,40 @@
 package com.techdhoom.socialstudent.model;
 
 import java.io.Serializable;
-import javax.persistence.*;
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author SONY
+ * @author krunal
  */
 @Entity
 @Table(name = "status")
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Status.findAll", query = "SELECT s FROM Status s"),
-    @NamedQuery(name = "Status.findByStatusid", query = "SELECT s FROM Status s WHERE s.statusid = :statusid"),
-    @NamedQuery(name = "Status.findByYourstatus", query = "SELECT s FROM Status s WHERE s.yourstatus = :yourstatus")})
+    @NamedQuery(name = "Status.findByYourstatus", query = "SELECT s FROM Status s WHERE s.yourstatus = :yourstatus"),
+    @NamedQuery(name = "Status.findByStatusid", query = "SELECT s FROM Status s WHERE s.statusid = :statusid")})
 public class Status implements Serializable {
     private static final long serialVersionUID = 1L;
-    @Id
-    @Basic(optional = false)
-    @Column(name = "statusid")
-    private Long statusid;
     @Basic(optional = false)
     @Column(name = "yourstatus")
     private String yourstatus;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Basic(optional = false)
+    @Column(name = "statusid")
+    private Long statusid;
     @JoinColumn(name = "userid", referencedColumnName = "user_id")
     @ManyToOne
     private Usermain userid;
@@ -44,20 +55,20 @@ public class Status implements Serializable {
         this.yourstatus = yourstatus;
     }
 
-    public Long getStatusid() {
-        return statusid;
-    }
-
-    public void setStatusid(Long statusid) {
-        this.statusid = statusid;
-    }
-
     public String getYourstatus() {
         return yourstatus;
     }
 
     public void setYourstatus(String yourstatus) {
         this.yourstatus = yourstatus;
+    }
+
+    public Long getStatusid() {
+        return statusid;
+    }
+
+    public void setStatusid(Long statusid) {
+        this.statusid = statusid;
     }
 
     public Usermain getUserid() {

@@ -43,7 +43,7 @@ public class UsermainDaoImplTest {
     @Test
     public void testCreateUsermain() {
         System.out.println("createUsermain");
-        Usermain usermain = new Usermain(1L);
+        Usermain usermain = new Usermain();
         UsermainDaoImpl instance = new UsermainDaoImpl();
         Long expResult = null;
         Long result = instance.createUsermain(usermain);

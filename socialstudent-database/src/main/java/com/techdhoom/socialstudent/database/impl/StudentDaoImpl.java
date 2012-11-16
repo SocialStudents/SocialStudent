@@ -41,6 +41,4 @@ public class StudentDaoImpl extends BaseAbstractGenericDao<Student, Long> implem
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
-   
-    
 }

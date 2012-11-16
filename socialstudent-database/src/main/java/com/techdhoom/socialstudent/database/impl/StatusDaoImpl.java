@@ -7,37 +7,35 @@ package com.techdhoom.socialstudent.database.impl;
 import com.techdhoom.socialstudent.common.database.impl.BaseAbstractGenericDao;
 import com.techdhoom.socialstudent.database.StatusDao;
 import com.techdhoom.socialstudent.model.Status;
-import java.io.Serializable;
+import com.techdhoom.socialstudent.model.Usermain;
+import java.util.List;
+import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author SONY
  */
+@Repository
 public class StatusDaoImpl extends BaseAbstractGenericDao<Status, Long> implements StatusDao{
-
+    
+    
     @Override
     public Long createStatus(Status status) {
     return super.create(status);   
     }
 
+   
     @Override
-    public Long updateStatus(Status status) {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public List<Status> retrieveallStatus() {
+       // throw new UnsupportedOperationException("Not supported yet.");
+    return super.retrieveAll();
+    
     }
 
     @Override
-    public Long deleteStatus(Status status) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    @Override
-    public Long retrievebyidStatus(Status status) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    @Override
-    public Long retrieveallStatus(Status status) {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public List<Status> findFiltered1(String property, Object filter) {
+       // throw new UnsupportedOperationException("Not supported yet.");
+    return super.findFiltered(property,filter);
     }
    
 }

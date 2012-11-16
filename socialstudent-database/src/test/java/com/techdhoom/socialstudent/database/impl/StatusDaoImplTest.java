@@ -51,48 +51,7 @@ public class StatusDaoImplTest {
     /**
      * Test of updateStatus method, of class StatusDaoImpl.
      */
-    @Test
-    public void testUpdateStatus() {
-        System.out.println("updateStatus");
-        Status status = null;
-        StatusDaoImpl instance = new StatusDaoImpl();
-        Long expResult = null;
-        Long result = instance.updateStatus(status);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of deleteStatus method, of class StatusDaoImpl.
-     */
-    @Test
-    public void testDeleteStatus() {
-        System.out.println("deleteStatus");
-        Status status = null;
-        StatusDaoImpl instance = new StatusDaoImpl();
-        Long expResult = null;
-        Long result = instance.deleteStatus(status);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of retrievebyidStatus method, of class StatusDaoImpl.
-     */
-    @Test
-    public void testRetrievebyidStatus() {
-        System.out.println("retrievebyidStatus");
-        Status status = null;
-        StatusDaoImpl instance = new StatusDaoImpl();
-        Long expResult = null;
-        Long result = instance.retrievebyidStatus(status);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
+  
     /**
      * Test of retrieveallStatus method, of class StatusDaoImpl.
      */
@@ -102,8 +61,8 @@ public class StatusDaoImplTest {
         Status status = null;
         StatusDaoImpl instance = new StatusDaoImpl();
         Long expResult = null;
-        Long result = instance.retrieveallStatus(status);
-        assertEquals(expResult, result);
+      //  Long result = instance.retrieveallStatus(status);
+        //assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }

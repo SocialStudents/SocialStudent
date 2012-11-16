@@ -31,6 +31,14 @@
         <pattern>/jugal1</pattern>
         <view-id>jugal1.jsf</view-id>
     </url-mapping>
+     <url-mapping id="manan1">
+        <pattern>/manan1</pattern>
+        <view-id>manan1.jsf</view-id>
+    </url-mapping>
+    <url-mapping id="tapan">
+        <pattern>/tapan</pattern>
+        <view-id>tapan.jsf</view-id>
+    </url-mapping>
     <url-mapping id="admin">
         <pattern>/admin</pattern>
         <view-id>admin.jsf</view-id>
