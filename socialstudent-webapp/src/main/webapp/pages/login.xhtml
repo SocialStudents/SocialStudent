@@ -9,7 +9,8 @@
     <h:body>   
         <ui:composition template="./layout/homeLayout.xhtml">
             <ui:define name="content">
-               
+                <rich:fileUpload fileUploadListener="#{fileUploadListener.imageUploadListener(event)}" id="upload">
+                </rich:fileUpload>
             </ui:define>
         </ui:composition>
     </h:body>       
