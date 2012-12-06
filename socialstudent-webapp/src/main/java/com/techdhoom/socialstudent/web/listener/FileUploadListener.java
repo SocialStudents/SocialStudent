@@ -12,6 +12,8 @@ import java.io.Serializable;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
+import org.richfaces.event.FileUploadEvent;
+import org.richfaces.model.UploadedFile;
 
 /**
  *
@@ -61,16 +63,16 @@ public class FileUploadListener implements Serializable {
     public void setSystemResultViewUtil(SystemResultViewUtil systemResultViewUtil) {
         this.systemResultViewUtil = systemResultViewUtil;
     }
-//    public void imageUploadListener(FileUploadEvent event) throws Exception {
-//        UploadedFile item = event.getUploadedFile();
-//        systemResultViewUtil.setImageData(item.getData());
-//        systemResultViewUtil.setImageName(item.getName());
-//        systemResultSessionUtil.setImageData(item.getData());
-//        systemResultSessionUtil.setImageName(item.getName());
-//        String name = item.getName();
-////        System.out.println("uploaded file name is " + name);
-//        systemResultViewUtil.setIsImageUploaded(true);
-//    }
+    public void imageUploadListener(FileUploadEvent event) throws Exception {
+        UploadedFile item = event.getUploadedFile();
+        systemResultViewUtil.setImageData(item.getData(),item.getName());
+        systemResultViewUtil.setImageName(item.getName());
+        systemResultSessionUtil.setImageData(item.getData());
+        systemResultSessionUtil.setImageName(item.getName());
+        String name = item.getName();
+        System.out.println("uploaded file name is " + name);
+       // systemResultViewUtil.setIsImageUploaded(true);
+    }
 //
 //    public void imageUploadListener1(FileUploadEvent event) throws Exception {
 //        UploadedFile item = event.getUploadedFile();
