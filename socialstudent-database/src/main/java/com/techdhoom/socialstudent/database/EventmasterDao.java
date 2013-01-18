@@ -14,10 +14,10 @@ import java.util.List;
  */
 public interface EventmasterDao extends GenericDao<Eventmaster, Long> {
     public Long createEventmaster(Eventmaster eventmaster);
-    public void updateEventmaster(Eventmaster eventmaster);
-    public Long deleteEventmaster(Eventmaster eventmaster);
-    public Eventmaster retrievebyidEventmaster(Long id);
-    public List<Eventmaster> retrieveallEventmaster();
+//    public void updateEventmaster(Eventmaster eventmaster);
+//    public Long deleteEventmaster(Eventmaster eventmaster);
+//    public Eventmaster retrievebyidEventmaster(Long id);
+//    public List<Eventmaster> retrieveallEventmaster();
 
     
 }
