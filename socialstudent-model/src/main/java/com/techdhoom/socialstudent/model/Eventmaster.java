@@ -28,11 +28,17 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Entity
 @Table(name = "eventmaster")
 public class Eventmaster implements Serializable {
+   
     private static final long serialVersionUID = 1L;
     @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "event_id")
     private Long eventId;
+     @Column(name = "event_title")
+    private String eventTitle;
+    @Column(name = "endingtime")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date endingtime;
     @Column(name = "event_type")
     private String eventType;
     @Column(name = "startingdate")
@@ -66,6 +72,7 @@ public class Eventmaster implements Serializable {
     public void setEventId(Long eventId) {
         this.eventId = eventId;
     }
+    
 
     public String getEventType() {
         return eventType;
@@ -146,6 +153,22 @@ public class Eventmaster implements Serializable {
     @Override
     public String toString() {
         return "com.techdhoom.socialstudent.model.Eventmaster[ eventId=" + eventId + " ]";
+    }
+
+    public String getEventTitle() {
+        return eventTitle;
+    }
+
+    public void setEventTitle(String eventTitle) {
+        this.eventTitle = eventTitle;
+    }
+
+    public Date getEndingtime() {
+        return endingtime;
+    }
+
+    public void setEndingtime(Date endingtime) {
+        this.endingtime = endingtime;
     }
     
 }
