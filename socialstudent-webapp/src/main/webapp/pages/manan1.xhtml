@@ -167,7 +167,7 @@ and open the template in the editor.
                                         </rich:columnGroup>
                                     </f:facet>
                                     <rich:column>
-                                        <a4j:commandLink value="#{user1.groupname}"  action="#{groupServiceBean.retriveUserByGroupId()}" render="users" onbegin="loadWaitPanel('right');" oncomplete="stopWaitPanel('right')">
+                                                <a4j:commandLink value="#{user1.groupname}"  action="#{groupServiceBean.retriveUserByGroupId()}" render="users" onbegin="loadWaitPanel('right');" oncomplete="stopWaitPanel('right')">
                                             <a4j:param assignTo="#{groupServiceBean.groupId}" value="#{user1.groupId}"/>
                                         </a4j:commandLink>
                                     </rich:column>
